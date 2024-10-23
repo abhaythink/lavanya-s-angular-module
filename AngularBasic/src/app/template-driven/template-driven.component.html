@@ -1,0 +1,36 @@
+<div class="tform">
+    <form #loginForm="ngForm" (ngSubmit)="logForm(loginForm.value)">
+        <h2>{{ title }}</h2>
+
+        <div>
+            <input type="email" ngModel name="email" placeholder="Email address" required />
+            <div *ngIf="(loginForm.controls['email']?.touched)">
+                <small *ngIf="loginForm.controls['email']?.errors?.['required']">Email is required.</small>
+            </div>
+        </div>
+
+        <div>
+            <input type="number" ngModel name="mno" placeholder="+91 8765434567" required />
+            <div *ngIf="(loginForm.controls['mno']?.touched)">
+                <small *ngIf="loginForm.controls['mno']?.errors?.['required']">Mobile number is required.</small>
+            </div>
+        </div>
+
+        <div>
+            <input type="password" ngModel name="pwd" placeholder="Enter password" required minlength="6" />
+            <div *ngIf="(loginForm.controls['pwd']?.touched)">
+                <small *ngIf="loginForm.controls['pwd']?.errors?.['required']">Password is required.</small>
+                <small *ngIf="loginForm.controls['pwd']?.errors?.['minlength']">Password must be at least 6 characters
+                    long.</small>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+
+    
+</div>
+
+
+
+                

@@ -1,0 +1,33 @@
+
+<br>
+<div style="display: flex;align-items: center;justify-content: center;">
+    <button  (click)="toggle()">Show Form</button>
+
+</div>
+<div class="completeForm" *ngIf="display">
+    <section>
+        <form #basicForm="ngForm" (ngSubmit)="getFormDetails(basicForm.value)">
+            <h2>{{title}}</h2>
+            <input type="email" ngModel name="email" placeholder="Email address">
+            <input type="number"  ngModel name="mno" placeholder="+91 8765434567">
+            <input type="password" ngModel name="pwd" placeholder="Enter password">
+            <input type="password" ngModel name="pwd" placeholder="Confirm password">
+            <button>Register</button>
+        </form>
+       
+    
+    </section>
+    
+    <section>
+        <form>
+            <h2>{{getData}}</h2>
+            <ul>
+             <li>{{sData.email}}</li>
+             <li>{{sData.mno}}</li>
+             <li>{{sData.pwd}}</li>
+     
+            </ul>
+         </form>
+    </section>
+  
+</div>

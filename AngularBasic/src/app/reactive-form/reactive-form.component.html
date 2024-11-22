@@ -1,0 +1,31 @@
+<div class="tform">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <h2>{{ title }}</h2>
+
+        <div>
+            <input type="email" name="email" placeholder="Email address" formControlName="email" />
+            <br>
+            <span style="color:red" *ngIf="email && email.invalid && email.touched">Please enter valid mail</span>
+
+        </div>
+
+        <div>
+            <input type="number" name="mno" placeholder="+91 8765434567" required formControlName="mno" />
+            <br>
+            <span style="color:red" *ngIf="mno && mno.invalid && mno.touched">Please enter minimum 10 digits.</span>
+
+        </div>
+
+        <div>
+            <input type="password" name="pwd" placeholder="Enter password" required minlength="6"
+                formControlName="pwd" />
+            <br>
+            <span style="color:red" *ngIf="pwd && pwd.invalid && pwd.touched">Password should be required minimum 5
+                length. </span>
+
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+</div>
+

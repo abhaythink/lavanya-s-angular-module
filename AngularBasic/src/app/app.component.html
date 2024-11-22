@@ -1,0 +1,114 @@
+<section>
+  <h1 style="text-align: center;margin-top: 50px;">Welcome to {{title}}</h1>
+<!-- <app-angular-basic></app-angular-basic>
+<app-angular-list></app-angular-list>
+<app-angular-lists></app-angular-lists>
+<app-signin></app-signin>
+<button (click)="getData()" class="btn">Function call</button>
+<input type="text" #box  placeholder="Event KeyUp Example" />
+<button #box (click)="getData1(box.value)"  class="btn">Send Data </button>
+<h4 style="margin-top: 2px;">Your Data : {{displayval}}</h4>
+<input type="text" #box1 (keydown)="getData1(box1.value)" placeholder="Event KeyDown Example" />
+<input type="text" #box2 (blur)="getData1(box2.value)" placeholder="Event blur Example" />
+
+<button (mouseover)="getData1('over')"  class="btn">Mouse Over</button>
+<button (mouseleave)="getData1('mouseleave')"  class="btn">Mouse leave</button>
+
+
+</section>
+
+<section style="margin-top: 10px;margin-bottom: 30px;">
+<input type="text" name="u_name" value={{name}}>
+<input type="text" name="u_name" [value]=name [disabled]=disable />
+
+<app-stylebinding></app-stylebinding>
+<app-forms></app-forms>
+<br>
+<ngb-alert [dismissible]="false">
+  <strong>warning!</strong> oops, better luck next time.
+</ngb-alert>
+
+<div ngbAccordion>
+  <div ngbAccordionItem>
+    <h2 ngbAccordionHeader>
+      <button ngbAccordionButton #abc>First</button>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        <ng-template>Content for the first item</ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="demo-section">
+  Button with a badge on the left
+  <button mat-raised-button matBadge="8" matBadgePosition="before">
+    Action
+  </button>
+</div>
+
+<br>
+
+<section style="height: 250px;">
+  <div class="todo">
+    <h2>Programming language todo</h2>
+    <div class="task">
+      <input type="text" placeholder="Enter your task" #task> &nbsp;
+    <button class="btn1" (click)="add(task.value)">+</button>
+    </div>
+    <ul *ngFor="let item of list">
+      <li>{{item.name}} <button class="btn2" (click)="remove(item.id)">X</button>
+      </li>
+    </ul>
+
+  </div>
+</section> -->
+
+<!-- pass data child component to parent component -->
+<section>
+  <section>
+    <app-child [item]="data"></app-child>
+    <button (click)="updateValue()">Update Random Value</button>
+  </section>
+  
+  <br>
+  <!-- reusable components -->
+
+  <ul *ngFor="let data of Details">
+    <section class="reusable">
+      <app-resuable-component [item]='data'></app-resuable-component>
+      </section>
+  </ul>
+
+  <!-- send data child to parent component -->
+  <h2>{{data1 | uppercase}}</h2>
+  <app-childtoparent (updateDataEvent)="updateData($event)"></app-childtoparent>
+<br><br>
+
+
+<!-- Two way data binding -->
+ <h2>Two way binding</h2>
+  <input type="text" [(ngModel)]="uname">
+  <h3>{{uname}} </h3>
+
+</section>
+<br>
+<!-- pipes in angular  -->
+
+<h2> {{pipeex | uppercase }}</h2>
+<h2>{{ today | date :'fullDate'}}</h2>
+<h3>{{pipeex | slice : 6 : 8 | uppercase}}</h3>
+<h5> {{Details | json }}</h5>
+<h3>{{ 300 | currency:'INR'}}</h3>
+<!-- custom pipes -->
+<p>Reversed String: {{ 'Hello, World!' | pipeex }}</p>
+
+<!-- Forms -->
+<!-- Template driven form -->
+ <app-template-driven></app-template-driven>
+ <app-reactive-form></app-reactive-form>
+
+
+
